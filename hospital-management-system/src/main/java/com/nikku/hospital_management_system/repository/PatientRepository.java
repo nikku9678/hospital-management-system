@@ -2,6 +2,7 @@ package com.nikku.hospital_management_system.repository;
 
 import com.nikku.hospital_management_system.dto.BloodGroupCountResponseEntity;
 import com.nikku.hospital_management_system.entity.Patient;
+import com.nikku.hospital_management_system.entity.User;
 import com.nikku.hospital_management_system.entity.type.BloodGroupType;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
@@ -16,6 +17,8 @@ import java.util.List;
 
 public interface PatientRepository extends JpaRepository<Patient, Long> {
     Patient findByName(String name);
+
+    Patient findByUser(User user);
 
     List<Patient> findByBirthDateOrEmail(LocalDate birthDate, String email);
 

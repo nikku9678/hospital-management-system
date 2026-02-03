@@ -27,7 +27,7 @@ public class AuthController {
     }
 
     @GetMapping("/me")
-    public UserProfileResponse getMyProfile() {
+    public UserProfileResponseDto getMyProfile() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         if (!(auth.getPrincipal() instanceof User user)) {
@@ -35,7 +35,7 @@ public class AuthController {
         }
 
         System.out.println("USER PROFILE -> " + user);
-        return UserProfileResponse.from(user);
+        return UserProfileResponseDto.from(user);
     }
 
 }

@@ -1,6 +1,10 @@
 package com.nikku.hospital_management_system.controller;
 
-import com.nikku.hospital_management_system.dto.*;
+import com.nikku.hospital_management_system.dto.requestDto.LoginRequestDto;
+import com.nikku.hospital_management_system.dto.requestDto.SignUpRequestDto;
+import com.nikku.hospital_management_system.dto.responseDto.LoginResponseDto;
+import com.nikku.hospital_management_system.dto.responseDto.SignupResponseDto;
+import com.nikku.hospital_management_system.dto.responseDto.UserProfileResponseDto;
 import com.nikku.hospital_management_system.entity.User;
 import com.nikku.hospital_management_system.security.AuthService;
 import lombok.RequiredArgsConstructor;

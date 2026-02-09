@@ -1,4 +1,4 @@
-package com.nikku.hospital_management_system.dto;
+package com.nikku.hospital_management_system.dto.requestDto;
 
 import lombok.Data;
 

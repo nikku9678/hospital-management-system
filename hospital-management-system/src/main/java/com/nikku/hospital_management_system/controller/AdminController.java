@@ -1,8 +1,8 @@
 package com.nikku.hospital_management_system.controller;
 
-import com.nikku.hospital_management_system.dto.DoctorResponseDto;
-import com.nikku.hospital_management_system.dto.OnboardDoctorRequestDto;
-import com.nikku.hospital_management_system.dto.PatientResponseDto;
+import com.nikku.hospital_management_system.dto.responseDto.DoctorResponseDto;
+import com.nikku.hospital_management_system.dto.requestDto.OnboardDoctorRequestDto;
+import com.nikku.hospital_management_system.dto.responseDto.PatientResponseDto;
 import com.nikku.hospital_management_system.service.DoctorService;
 import com.nikku.hospital_management_system.service.PatientService;
 import lombok.RequiredArgsConstructor;

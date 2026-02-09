@@ -1,7 +1,7 @@
 package com.nikku.hospital_management_system.service;
 
-import com.nikku.hospital_management_system.dto.AppointmentResponseDto;
-import com.nikku.hospital_management_system.dto.CreateAppointmentRequestDto;
+import com.nikku.hospital_management_system.dto.responseDto.AppointmentResponseDto;
+import com.nikku.hospital_management_system.dto.requestDto.CreateAppointmentRequestDto;
 import com.nikku.hospital_management_system.entity.Appointment;
 import com.nikku.hospital_management_system.entity.Doctor;
 import com.nikku.hospital_management_system.entity.Patient;

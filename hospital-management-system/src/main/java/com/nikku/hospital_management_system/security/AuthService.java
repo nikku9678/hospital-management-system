@@ -1,27 +1,21 @@
 package com.nikku.hospital_management_system.security;
 
-import com.nikku.hospital_management_system.dto.LoginRequestDto;
-import com.nikku.hospital_management_system.dto.LoginResponseDto;
-import com.nikku.hospital_management_system.dto.SignUpRequestDto;
-import com.nikku.hospital_management_system.dto.SignupResponseDto;
+import com.nikku.hospital_management_system.dto.requestDto.LoginRequestDto;
+import com.nikku.hospital_management_system.dto.responseDto.LoginResponseDto;
+import com.nikku.hospital_management_system.dto.requestDto.SignUpRequestDto;
+import com.nikku.hospital_management_system.dto.responseDto.SignupResponseDto;
 import com.nikku.hospital_management_system.entity.Patient;
 import com.nikku.hospital_management_system.entity.User;
 import com.nikku.hospital_management_system.entity.type.AuthProviderType;
 import com.nikku.hospital_management_system.entity.type.RoleType;
 import com.nikku.hospital_management_system.repository.PatientRepository;
 import com.nikku.hospital_management_system.repository.UserRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
-
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor

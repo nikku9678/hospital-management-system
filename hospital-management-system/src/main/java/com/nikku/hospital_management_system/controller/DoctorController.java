@@ -1,6 +1,6 @@
 package com.nikku.hospital_management_system.controller;
 
-import com.nikku.hospital_management_system.dto.AppointmentResponseDto;
+import com.nikku.hospital_management_system.dto.responseDto.AppointmentResponseDto;
 import com.nikku.hospital_management_system.entity.User;
 import com.nikku.hospital_management_system.service.AppointmentService;
 import lombok.RequiredArgsConstructor;

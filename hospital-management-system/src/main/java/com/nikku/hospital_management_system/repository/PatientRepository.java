@@ -1,6 +1,6 @@
 package com.nikku.hospital_management_system.repository;
 
-import com.nikku.hospital_management_system.dto.BloodGroupCountResponseEntity;
+import com.nikku.hospital_management_system.dto.responseDto.BloodGroupCountResponseEntity;
 import com.nikku.hospital_management_system.entity.Patient;
 import com.nikku.hospital_management_system.entity.User;
 import com.nikku.hospital_management_system.entity.type.BloodGroupType;
@@ -32,7 +32,7 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
     @Query("select p from Patient p where p.birthDate > :birthDate")
     List<Patient> findByBornAfterDate(@Param("birthDate") LocalDate birthDate);
 
-    @Query("select new com.nikku.hospital_management_system.dto.BloodGroupCountResponseEntity(p.bloodGroup," +
+    @Query("select new com.nikku.hospital_management_system.dto.responseDto.BloodGroupCountResponseEntity(p.bloodGroup," +
             " Count(p)) from Patient p group by p.bloodGroup")
 //    List<Object[]> countEachBloodGroupType();
     List<BloodGroupCountResponseEntity> countEachBloodGroupType();

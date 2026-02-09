@@ -1,10 +1,11 @@
 package com.nikku.hospital_management_system.service;
 
-import com.nikku.hospital_management_system.dto.InsuranceRequestDto;
-import com.nikku.hospital_management_system.dto.InsuranceResponseDto;
+import com.nikku.hospital_management_system.dto.requestDto.InsuranceRequestDto;
+import com.nikku.hospital_management_system.dto.responseDto.InsuranceResponseDto;
 import com.nikku.hospital_management_system.entity.Insurance;
 import com.nikku.hospital_management_system.entity.Patient;
 import com.nikku.hospital_management_system.entity.User;
+import com.nikku.hospital_management_system.entity.type.RoleType;
 import com.nikku.hospital_management_system.repository.InsuranceRepository;
 import com.nikku.hospital_management_system.repository.PatientRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -27,6 +28,9 @@ public class InsuranceService {
     ) {
 
         Patient patient = patientRepository.findByUser(user);
+        if(!patient.getUser().getRoles().name().equals(RoleType.PATIENT.name())){
+            throw new IllegalStateException("Only Patient can create the insurance");
+        }
 
 
         if (patient.getInsurance() != null) {

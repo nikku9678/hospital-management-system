@@ -1,17 +1,15 @@
 package com.nikku.hospital_management_system.service;
 
-import com.nikku.hospital_management_system.dto.PatientResponseDto;
+import com.nikku.hospital_management_system.dto.responseDto.PatientResponseDto;
 import com.nikku.hospital_management_system.entity.Patient;
 import com.nikku.hospital_management_system.repository.PatientRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor

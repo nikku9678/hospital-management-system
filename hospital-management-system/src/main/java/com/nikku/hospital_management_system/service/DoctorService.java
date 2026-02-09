@@ -1,10 +1,9 @@
 package com.nikku.hospital_management_system.service;
 
-import com.nikku.hospital_management_system.dto.DoctorResponseDto;
-import com.nikku.hospital_management_system.dto.OnboardDoctorRequestDto;
+import com.nikku.hospital_management_system.dto.responseDto.DoctorResponseDto;
+import com.nikku.hospital_management_system.dto.requestDto.OnboardDoctorRequestDto;
 import com.nikku.hospital_management_system.entity.Doctor;
 import com.nikku.hospital_management_system.entity.User;
-import com.nikku.hospital_management_system.entity.type.RoleType;
 import com.nikku.hospital_management_system.repository.DoctorRepository;
 import com.nikku.hospital_management_system.repository.UserRepository;
 import jakarta.transaction.Transactional;

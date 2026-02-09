@@ -1,12 +1,8 @@
-package com.nikku.hospital_management_system.dto;
+package com.nikku.hospital_management_system.dto.requestDto;
 
-import com.nikku.hospital_management_system.entity.type.RoleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor

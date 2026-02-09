@@ -1,50 +1,25 @@
 package com.nikku.hospital_management_system.service;
 
-import com.nikku.hospital_management_system.dto.responseDto.PatientResponseDto;
-import com.nikku.hospital_management_system.entity.Patient;
-import com.nikku.hospital_management_system.repository.PatientRepository;
-import jakarta.persistence.EntityNotFoundException;
-import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Service;
+import com.nikku.hospital_management_system.dto.requestDto.*;
+import com.nikku.hospital_management_system.dto.responseDto.*;
 
 import java.util.List;
 
-@Service
-@RequiredArgsConstructor
-public class PatientService {
+public interface PatientService {
 
-    private final PatientRepository patientRepository;
-    private final ModelMapper modelMapper;
+    // Profile
+    PatientResponseDto getPatientByUserId(Long userId);
+    PatientResponseDto updatePatientProfile(Long userId, UpdatePatientRequestDto dto);
 
-    @Transactional
-    public PatientResponseDto getPatientById(Long patientId) {
-        Patient patient = patientRepository.findById(patientId).orElseThrow(() -> new EntityNotFoundException("Patient Not " +
-                "Found with id: " + patientId));
-        return modelMapper.map(patient, PatientResponseDto.class);
-    }
+    // Insurance
+    InsuranceResponseDto addInsurance(Long userId, CreateInsuranceRequestDto dto);
+    InsuranceResponseDto getInsurance(Long userId);
+    InsuranceResponseDto updateInsurance(Long userId, CreateInsuranceRequestDto dto);
+    void deleteInsurance(Long userId);
 
-    public List<PatientResponseDto> getAllPatients(Integer pageNumber, Integer pageSize) {
-        return null;
-    }
-
-    public List<PatientResponseDto> getAllPatients() {
-
-        return patientRepository.findAll()
-                .stream()
-                .map(patient -> {
-                    return new PatientResponseDto(
-                            patient.getId(),
-                            patient.getName(),
-                            patient.getGender(),
-                            patient.getPhoneNumber(),
-                            patient.getAdharNumber(),
-                            patient.getBirthDate(),
-                            patient.getBloodGroup()
-                            );
-                })
-                .toList();
-    }
-
+    // Appointment
+    AppointmentResponseDto bookAppointment(Long userId, CreateAppointmentRequestDto dto);
+    List<AppointmentResponseDto> getMyAppointments(Long userId);
+    AppointmentResponseDto getAppointmentById(Long appointmentId);
+    void cancelAppointment(Long appointmentId);
 }

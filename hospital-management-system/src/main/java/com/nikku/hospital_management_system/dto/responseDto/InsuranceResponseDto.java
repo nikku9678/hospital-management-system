@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class InsuranceResponseDto {
 
     private Long id;

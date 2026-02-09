@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.*;
 public class AppointmentController {
     private final AppointmentService appointmentService;
 
-    @PostMapping("/book")
-    public AppointmentResponse book(
-            @RequestBody BookAppointmentRequest request) {
-
-        return appointmentService.book(request);
-    }
-
-    @GetMapping("/my")
-    public List<AppointmentResponse> myAppointments() {
-        return appointmentService.myAppointments();
-    }
+//    @PostMapping("/book")
+//    public AppointmentResponse book(
+//            @RequestBody BookAppointmentRequest request) {
+//
+//        return appointmentService.book(request);
+//    }
+//
+//    @GetMapping("/my")
+//    public List<AppointmentResponse> myAppointments() {
+//        return appointmentService.myAppointments();
+//    }
 }

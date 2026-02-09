@@ -1,11 +1,10 @@
-package com.nikku.hospital_management_system.dto.responseDto;
+package com.nikku.hospital_management_system.dto.requestDto;
 
 import lombok.Data;
 
 @Data
-public class DoctorResponseDto {
+public class UpdateDoctorRequestDto {
 
-    private Long id;
     private String name;
     private String specialization;
     private String email;

@@ -1,4 +1,4 @@
-package com.nikku.hospital_management_system.dto.responseDto;
+package com.nikku.hospital_management_system.dto.requestDto;
 
 import com.nikku.hospital_management_system.entity.type.BloodGroupType;
 import lombok.Data;
@@ -6,12 +6,10 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Data
-public class PatientResponseDto {
+public class UpdatePatientRequestDto {
 
-    private Long id;
     private String name;
     private LocalDate birthDate;
-    private String email;
     private String phoneNumber;
     private String gender;
     private String adharNumber;

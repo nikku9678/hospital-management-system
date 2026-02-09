@@ -14,11 +14,19 @@ import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 public interface PatientRepository extends JpaRepository<Patient, Long> {
     Patient findByName(String name);
 
     Patient findByUser(User user);
+
+    /**
+     * Find patient using User ID
+     * Because Patient has:
+     * @OneToOne @MapsId private User user;
+     */
+    Optional<Patient> findByUserId(Long userId);
 
     List<Patient> findByBirthDateOrEmail(LocalDate birthDate, String email);
 

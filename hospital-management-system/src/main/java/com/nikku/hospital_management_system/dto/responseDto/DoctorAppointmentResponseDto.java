@@ -5,12 +5,12 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class AppointmentResponseDto {
+public class DoctorAppointmentResponseDto {
 
     private Long id;
     private LocalDateTime appointmentTime;
     private String reason;
 
-    private Long doctorId;
-    private String doctorName;
+    private Long patientId;
+    private String patientName;
 }
